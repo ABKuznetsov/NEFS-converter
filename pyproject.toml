@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sem-data-converter"
+version = "0.1.0"
+description = "Independent SEM source-data conversion to NESF"
+requires-python = ">=3.11"
+dependencies = []
+license = {text = "MIT"}
+
+[project.scripts]
+sem-data-converter = "sem_data_converter.cli:main"
+
+[project.gui-scripts]
+sem-data-converter-gui = "sem_data_converter.gui:main_gui"
+
+[tool.setuptools.packages.find]
+include = ["sem_data_converter*"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "licenses/*.txt"]
+
+[tool.setuptools.package-data]
+sem_data_converter = ["bridge/*.ps1"]
